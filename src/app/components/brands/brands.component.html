@@ -1,0 +1,15 @@
+<section>
+    <div class="w-100 d-flex justify-content-center my-5">
+        <h2 class="py-3 h1 border-bottom">All Brands</h2>
+    </div>
+    <div class="row g-1">
+        <div class="col-md-2 brands m-4 p-4" *ngFor="let item of brands">
+            <div>
+                <img [src]="item.image" class="w-100" alt>
+            </div>
+            <div class="d-flex justify-content-center border-top pt-3">
+                <p>{{item.name}}</p>
+            </div>
+        </div>
+    </div>
+</section>

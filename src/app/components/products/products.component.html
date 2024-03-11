@@ -1,0 +1,29 @@
+<section>
+    <div class="w-100 d-flex justify-content-center my-5">
+        <h2 class="py-3 h1 border-bottom">ALL Products</h2>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-2" *ngFor="let item of products">
+            <div class="product p-1">
+                <div class="p-2 cursor-pointer"
+                    [routerLink]="['/details' , item._id]">
+                    <img [src]="item.imageCover" class="w-100"
+                        [alt]="item.title">
+                    <h3 class="h6 text-success pt-2">{{item.category.name |
+                        lowercase}}</h3>
+                    <h4
+                        class="h6">{{item.title | termtext:2 | lowercase}}</h4>
+                    <div class="d-flex justify-content-between">
+                        <span class="text-success">{{item.price | currency:'E£'}}</span>
+                        <div>
+                            <i class="fas fa-star rating-color"></i>
+                            <span
+                                class="text-muted ms-2">{{item.ratingsAverage}}</span>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="addCart(item._id)" class="main-btn w-100">Add Product</button>
+            </div>
+        </div>
+    </div>
+</section>
